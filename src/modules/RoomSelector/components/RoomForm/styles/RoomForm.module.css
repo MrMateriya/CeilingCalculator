@@ -1,0 +1,111 @@
+@font-face {
+    font-family: "Futura PT-Book";
+    src: url("../assets/fonts/FuturaPT-Book.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Futura PT-Medium";
+    src: url("../assets/fonts/FuturaPT-Medium.ttf") format("truetype");
+}
+.room-form {
+    padding: 40px;
+}
+.inputs-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px 30px;
+    margin-bottom: 35px;
+}
+.inputs-list__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.inputs-list__title {
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Futura PT-Book';
+}
+
+.total-price {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 35px;
+}
+.total-price__cost {
+    font-size: 36px;
+    font-weight: 500;
+    color: #333333;
+    margin-right: 4px;
+    white-space: pre;
+    display: flex;
+    align-items: center;
+    font-family: "Futura PT-Book";
+}
+.total-price__value {
+    color: #BF3266;
+    max-width: 220px;
+    display: inline-block;
+    overflow: auto;
+}
+.total-price__caveat {
+    font-size: 18px;
+    font-weight: 400;
+    white-space: nowrap;
+    font-family: "Futura PT-Medium";
+    color: #000000;
+}
+.buttons-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 35px;
+}
+
+@media (max-width: 768px) {
+    .room-form {
+        padding: 40px 48px 40px 40px;
+    }
+}
+@media (max-width: 730px) {
+    .room-form {
+        padding: 20px 30px;
+    }
+    .inputs-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+    .total-price {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin-bottom: 10px;
+    }
+    .buttons-list {
+        gap: 16px;
+    }
+    .total-price__cost {
+        font-size: 26px;
+    }
+}
+@media (max-width: 630px) {
+    .room-form {
+        padding: 20px 10px;
+    }
+}
+@media (max-width: 414px) {
+    .room-form {
+        padding: 23px 10px;
+    }
+}
+@media (max-width: 390px) {
+    .room-form {
+        padding: 10px;
+    }
+    .buttons-list {
+        flex-direction: column;
+    }
+}

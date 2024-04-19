@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../assets/fonts/FuturaPT-Medium.ttf') format('truetype');
+}
+.button {
+    font-family: "Futura PT";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    padding: 20px 41px;
+    white-space: nowrap;
+    border-radius: 5px;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 1px solid transparent;
+    box-sizing: border-box;
+    position: relative;
+}
+.button_question-mark-padding {
+    padding: 20px 35px 20px 25px;
+}
+.button_outline {
+    border: 1px solid rgba(191, 50, 102, 1);
+    color: rgba(191, 50, 102, 1);
+}
+.button_outline:active {
+    color: white;
+    background-color: rgba(191, 50, 102, 1);
+}
+.button_filled {
+    border: 1px solid #BF3266;
+    background-color: #BF3266;
+    color: #FFFFFF;
+}
+.button_filled:active {
+    background-color: #FFFFFF;
+    color: #BF3266;
+}
+
+@media (max-width: 730px) {
+    .button {
+        font-size: 12px;
+        padding: 17px 35px;
+    }
+    .button_question-mark-padding {
+        padding: 17px 35px 17px 21px;
+    }
+}
+@media (max-width: 390px) {
+    .button {
+        width: 100%;
+    }
+}

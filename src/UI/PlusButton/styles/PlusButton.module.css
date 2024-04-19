@@ -1,0 +1,18 @@
+.plus-button {
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(183, 186, 203, 0.4);
+    box-sizing: border-box;
+    border: none;
+    width: 40px;
+    height: 40px;
+}
+.plus-button:active {
+    background-color: rgba(135, 136, 149, 0.4);
+}
+.plus-button__svg {
+    width: 16px;
+    height: 16px;
+}

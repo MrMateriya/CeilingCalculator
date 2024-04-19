@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../assets/fonts/FuturaPT-Book.ttf') format('truetype');
+}
+.selector-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(183, 186, 203, 0.2);
+    padding: 10px;
+    position: relative;
+    font-size: 18px;
+    font-weight: 400;
+}
+.selector-input__options-content {
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    width: 100%;
+}
+.selector-input__option {
+    background-color: #F1F1F5;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: "Futura PT";
+}
+.selector-input__initial-option {
+    font-family: "Futura PT";
+    max-width: 235px;
+    overflow: auto;
+}
+.selector-input__option_selected {
+    background-color: #eaeaee;
+    padding: 10px;
+}

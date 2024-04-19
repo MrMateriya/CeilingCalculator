@@ -1,0 +1,18 @@
+.minus-button {
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(183, 186, 203, 0.4);
+    box-sizing: border-box;
+    border: none;
+    width: 40px;
+    height: 40px;
+}
+.minus-button:active {
+    background-color: rgba(135, 136, 149, 0.4);
+}
+.minus-button__svg {
+    width: 16px;
+    height: 16px;
+}

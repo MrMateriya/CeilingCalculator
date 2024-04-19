@@ -1,0 +1,133 @@
+@font-face {
+    font-family: "Futura PT-Medium";
+    src: url('../assets/fonts/FuturaPT-Medium.ttf') format('truetype');
+}
+* {
+    margin: 0;
+    padding: 0px;
+}
+.container {
+    width: 1500px;
+    margin: 0 auto;
+}
+.ceiling-calculator-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../assets/images/ceilingBackGround.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: -20px;
+    background-position-y: 36px;
+}
+.page-title {
+    font-family: 'Futura PT-Medium';
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 38px;
+}
+
+@media (max-width: 1550px) {
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+@media (max-width: 1440px) {
+    .container {
+        width: 1230px;
+        padding: 0;
+    }
+    .ceiling-calculator-page {
+        background-position-x: 0;
+        background-position-y: 0;
+    }
+    .page-title {
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 1270px) {
+    .container {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+@media (max-width: 1024px) {
+    .container {
+        width: 967px;
+        padding: 0;
+    }
+    .ceiling-calculator-page {
+        background-position-x: -376px;
+        background-position-y: -39px;
+    }
+    .page-title {
+        font-size: 36px;
+    }
+}
+@media (max-width: 1000px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+    .ceiling-calculator-page {
+        background-position-x: 0;
+        background-position-y: 0;
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        width: 709px;
+        padding: 0;
+    }
+}
+@media (max-width: 730px) {
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+    .page-title {
+        font-size: 26px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-height: 830px) and (max-width: 320px) {
+    .ceiling-calculator-page {
+        justify-content: flex-start;
+        height: auto;
+    }
+    .page-title {
+        margin-top: 20px;
+    }
+    .page-selector {
+        padding-bottom: 20px;
+    }
+}
+@media (max-height: 750px) and (max-width: 730px) {
+    .ceiling-calculator-page {
+        justify-content: flex-start;
+        height: auto;
+    }
+    .page-title {
+        margin-top: 20px;
+    }
+    .page-selector {
+        padding-bottom: 20px;
+    }
+}
+@media (max-height: 680px) {
+    .ceiling-calculator-page {
+        justify-content: flex-start;
+        height: auto;
+    }
+    .page-title {
+        margin-top: 20px;
+    }
+    .page-selector {
+        padding-bottom: 20px;
+    }
+}

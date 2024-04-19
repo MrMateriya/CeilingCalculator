@@ -1,0 +1,73 @@
+@font-face {
+    font-family: "Futura PT-Book";
+    src: url("../assets/fonts/FuturaPT-Book.ttf") format('truetype');
+}
+.page-content {
+    display: grid;
+    grid-template-columns: 1fr 800px;
+    box-shadow: 0 4px 50px 1px #85858540;
+}
+.room-selector {
+    width: 1500px;
+}
+.page-content__image-container {
+    overflow: hidden;
+}
+.page-content__image {
+    height: 100%;
+}
+.room-selector__tab-pages {
+    display: flex;
+}
+.room-selector__page-content {
+    background-color: #FFFFFF;
+}
+.page-content__form {
+}
+.page-content__form_current {
+
+}
+
+@media (max-width: 1550px) {
+    .page-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 1440px) {
+    .page-content {
+        grid-template-columns: 1fr 529px;
+    }
+}
+@media (max-width: 1270px) {
+    .page-content {
+        grid-template-columns: 1fr 500px;
+    }
+}
+@media (max-width: 1200px) {
+    .page-content {
+        grid-template-columns: 1fr 450px;
+    }
+}
+@media (max-width: 1150px) {
+    .page-content {
+        grid-template-columns: 1fr 380px;
+    }
+}
+@media (max-width: 1090px) {
+    .page-content {
+        grid-template-columns: 1fr 340px;
+    }
+}
+@media (max-width: 1024px) {
+    .page-content {
+        grid-template-columns: 1fr 266px;
+    }
+}
+@media (max-width: 1000px) {
+    .page-content {
+        grid-template-columns: 1fr;
+    }
+    .page-content__image-container {
+        display: none;
+    }
+}

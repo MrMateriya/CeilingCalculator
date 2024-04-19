@@ -1,0 +1,18 @@
+.selector-button {
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(191, 50, 102, 1);
+    box-sizing: border-box;
+    border: none;
+    width: 40px;
+    height: 40px;
+}
+.selector-button:active {
+    background-color: rgb(167 44 89);
+}
+.selector-button__svg {
+    width: 13px;
+    height: 9px;
+}
