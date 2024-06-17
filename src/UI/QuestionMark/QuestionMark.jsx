@@ -1,16 +1,23 @@
 import React, {useState} from 'react';
 import styles from './styles/QuestionMark.module.css'
+import {handleTabSelection} from "../../utils/handleTabSelection";
 
 const QuestionMark = function QuestionMark({className, descriptionText, ...props}) {
   const [isShowDescription, setIsShowDescription] = useState(false)
+
+  function handleShowDescription(e) {
+    setIsShowDescription(prevState => !prevState)
+  }
 
   return (
     <div
       className={[styles['question-mark'], className].join(' ')}
       {...props}
-      onClick={e => setIsShowDescription(prevState => !prevState)}
-      // onMouseEnter={e => setIsShowDescription(prev => !prev)}
-      // onMouseLeave={e => setIsShowDescription(prev => !prev)}
+      tabIndex={0}
+      onKeyDown={(e) => {
+        handleTabSelection(e, handleShowDescription)
+      }}
+      onClick={handleShowDescription}
     >
       ?
       {isShowDescription

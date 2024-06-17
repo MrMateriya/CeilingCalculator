@@ -9,6 +9,9 @@
     width: 40px;
     height: 40px;
 }
+.selector-button:focus-visible {
+    outline: #FFFFFF solid 5px;
+}
 .selector-button:active {
     background-color: rgb(167 44 89);
 }

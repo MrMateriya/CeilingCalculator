@@ -16,6 +16,9 @@
     background-color: #000000;
     border-radius: 0 5px 0 0;
 }
+.question-mark:focus-visible {
+    outline: rgba(183, 186, 203, 0.4) solid 5px;
+}
 .question-mark__content {
     position: absolute;
     z-index: 1;

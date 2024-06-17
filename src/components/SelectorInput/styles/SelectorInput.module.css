@@ -31,6 +31,10 @@
     font-weight: 400;
     font-family: "Futura PT";
 }
+.selector-input__option:focus-visible {
+    background-color: #FFFFFF;
+    outline: rgba(183, 186, 203, 0.4) solid 5px;
+}
 .selector-input__initial-option {
     font-family: "Futura PT";
     max-width: 235px;

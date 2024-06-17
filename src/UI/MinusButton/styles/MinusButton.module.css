@@ -9,6 +9,9 @@
     width: 40px;
     height: 40px;
 }
+.minus-button:focus-visible {
+    outline: #FFFFFF solid 5px;
+}
 .minus-button:active {
     background-color: rgba(135, 136, 149, 0.4);
 }

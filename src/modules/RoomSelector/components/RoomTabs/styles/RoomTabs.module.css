@@ -31,6 +31,13 @@
     white-space: nowrap;
     padding: 18px 20px;
     box-shadow: inset 0 0 20px -8px #85858540;
+    background-color: rgba(183, 186, 203, 0.2);
+}
+.tab-pages__item:focus-visible {
+    outline: none;
+    background-color: rgba(183, 186, 203, 0.4);
+}
+.tab-pages__item_current {
     background-color: #FFFFFF;
 }
 .tab-pages__title {

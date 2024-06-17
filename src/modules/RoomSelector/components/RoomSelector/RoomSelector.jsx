@@ -35,7 +35,7 @@ const RoomSelector = ({className}) => {
   return (
     <div className={[styles['room-selector'], className].join(' ')}>
 
-      <RoomTabs className={styles['room-selector__tab-pages']} tabs={roomTabs} onSelectTab={selectTab} onCreateTab={createTab}/>
+      <RoomTabs currentTab={currentTab} className={styles['room-selector__tab-pages']} tabs={roomTabs} onSelectTab={selectTab} onCreateTab={createTab}/>
 
       <div className={[styles['room-selector__page-content'], styles['page-content']].join(' ')}>
         {

@@ -2,6 +2,7 @@ import React, { useMemo, useState} from 'react';
 import './styles/SelectorInput.module.css'
 import styles from './styles/SelectorInput.module.css'
 import SelectorButton from "../../UI/SelectorButton/SelectorButton";
+import {handleTabSelection} from "../../utils/handleTabSelection";
 const SelectorInput = React.memo(function SelectorInput({className, options, onChange, inputValue, ...props}) {
   // option template object
   // {id: 1, value: 'matte', text: 'Матовая'}
@@ -22,6 +23,8 @@ const SelectorInput = React.memo(function SelectorInput({className, options, onC
         return (
           <div
             key={mapOption.id}
+            tabIndex={0}
+            onKeyDown={(e) => {handleTabSelection(e, optionChoosing, mapOption, e)}}
             onClick={e => optionChoosing(mapOption, e)}
             className={[styles['selector-input__option'], styles['selector-input__option_selected']].join(' ')}>
             {mapOption.text}
@@ -31,6 +34,8 @@ const SelectorInput = React.memo(function SelectorInput({className, options, onC
       return (
         <div
           key={mapOption.id}
+          tabIndex={0}
+          onKeyDown={(e) => {handleTabSelection(e, optionChoosing, mapOption, e)}}
           onClick={e => optionChoosing(mapOption, e)}
           className={styles['selector-input__option']}>
           {mapOption.text}
@@ -66,12 +71,12 @@ const SelectorInput = React.memo(function SelectorInput({className, options, onC
       onMouseLeave={e => {if(isShowOptions) {showOptions(e)}}}
       {...props}>
       <p className={styles['selector-input__initial-option']}>{choseOption.text}</p>
+      <SelectorButton style={isShowOptions? {backgroundColor: 'rgb(167 44 89)'} : {}}/>
       {isShowOptions
         ? <div className={styles['selector-input__options-content']}>
-            {optionsElements}
-          </div>
+          {optionsElements}
+        </div>
         : false}
-      <SelectorButton style={isShowOptions? {backgroundColor: 'rgb(167 44 89)'} : {}}/>
     </div>
   );
 });

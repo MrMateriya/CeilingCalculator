@@ -1,8 +1,9 @@
 import React, {useRef, useState} from 'react';
 import {memo} from "react";
 import styles from './styles/RoomTabs.module.css'
+import {handleTabSelection} from "../../../../utils/handleTabSelection";
 
-const RoomTabs = memo (function RoomTabs({tabs, className, onSelectTab, onCreateTab}) {
+const RoomTabs = memo (function RoomTabs({tabs, className, onSelectTab, onCreateTab, currentTab}) {
   console.log('Roomtabs render')
   const tabPagesContent = useRef()
   const tabPagesContainer = useRef()
@@ -23,12 +24,12 @@ const RoomTabs = memo (function RoomTabs({tabs, className, onSelectTab, onCreate
     let difference = startX - e.clientX
     tabPagesContent.current.scrollLeft = startScrollLeft + (difference*scrollSpeed)
   }
-  function TouchSetStartScrollLeft(e) {
+  function touchSetStartScrollLeft(e) {
     isScrolling = true
     startX = e.changedTouches[0].clientX;
     startScrollLeft = tabPagesContent.current.scrollLeft
   }
-  function TouchScrollingTabs(e) {
+  function touchScrollingTabs(e) {
     const boxCoordinates = tabPagesContainer.current.getBoundingClientRect()
     if (!isScrolling) return
     if (!(e.changedTouches[0].clientY < boxCoordinates.bottom
@@ -41,14 +42,15 @@ const RoomTabs = memo (function RoomTabs({tabs, className, onSelectTab, onCreate
     let difference = startX - e.changedTouches[0].clientX
     tabPagesContent.current.scrollLeft = startScrollLeft + (difference*scrollSpeed)
   }
+
   return (
     <div
       onMouseMove={scrollingTabs}
       onMouseUp={() => {isScrolling = false}}
       onMouseLeave={() => {isScrolling = false}}
       onMouseDown={setStartScrollLeft}
-      onTouchStart={TouchSetStartScrollLeft}
-      onTouchMove={TouchScrollingTabs}
+      onTouchStart={touchSetStartScrollLeft}
+      onTouchMove={touchScrollingTabs}
       onTouchEnd={() => {isScrolling = false; isLeaveTouch = false;}}
       ref={tabPagesContainer}
       className={[styles['tab-pages'], className].join(' ')}
@@ -58,7 +60,11 @@ const RoomTabs = memo (function RoomTabs({tabs, className, onSelectTab, onCreate
           return (
             <div
               key={tab.id}
-              className={styles['tab-pages__item']}
+              tabIndex={0}
+              onKeyDown={(e) => {
+                handleTabSelection(e, onSelectTab, tab.id)
+              }}
+              className={[styles['tab-pages__item'], currentTab.id === tab.id? styles['tab-pages__item_current'] : ''].join(' ')}
               onClick={(e) => {
                 onSelectTab(tab.id)
               }}>
@@ -69,7 +75,11 @@ const RoomTabs = memo (function RoomTabs({tabs, className, onSelectTab, onCreate
 
         <div
           key={0}
+          tabIndex={0}
           className={[styles['tab-pages__item'], styles['tab-pages__item_add-room']].join(' ')}
+          onKeyDown={(e) => {
+            handleTabSelection(e, onCreateTab)
+          }}
           onClick={(e) => {
             onCreateTab()
           }}>
