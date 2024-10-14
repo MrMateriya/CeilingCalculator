@@ -6,76 +6,13 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import { Provider } from "react-redux";
 import {mainStore} from "./store";
 import CeilingCalculatorPage from "./pages/CeilingCalculatorPage/components/CeilingCalculatorPage/CeilingCalculatorPage";
-import PlusButton from "./UI/PlusButton/PlusButton";
-import CountedInput from "./components/CountedInput/CountedInput";
-import MinusButton from "./UI/MinusButton/MinusButton";
-import SelectorInput from "./components/SelectorInput/SelectorInput";
-import TextButton from "./UI/TextButton/TextButton";
-import RoomForm from "./modules/RoomSelector/components/RoomForm/RoomForm";
-import {RoomSelector} from "./modules/RoomSelector";
-import TypesOfValue from "./components/CountedInput/constants/TypesOfValue";
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <CeilingCalculatorPage/>
   },
-  {
-    path: '/*',
-
-    element: <h1>WrongPath</h1>
-  },
-  {
-    path: '/plusbutton',
-    element: <PlusButton/>
-  },
-  {
-    path: '/minusbutton',
-    element: <MinusButton/>
-  },
-  {
-    path: '/countedinput',
-    element: <>
-      <CountedInput onChange={(e) => {
-        console.log(e)}} className={'ktotot'}/>
-      <CountedInput valueType={TypesOfValue.pieces}/>
-    </>
-  },
-  {
-    path: '/selector',
-    element: <SelectorInput
-      options={[
-      {id: 1, value: 'glossy', text: 'Глянцевая'},
-      {id: 2, value: 'matte', text: 'Матовая'},
-      {id: 3, value: 'satin', text: 'Сатиновая'},
-      {id: 4, value: 'fabric', text: 'Тканевая'},
-      {id: 5, value: 'exclusive', text: 'Эксклюзивная'},]}
-      onChange={option => console.log(option)}
-    />
-  },
-  {
-    path: '/button',
-    element: <>
-      <TextButton descriptionText={'текст текст текст'}>Скачать мету</TextButton>
-      <TextButton type='filled' descriptionText={'smth'}>Оформить заказ</TextButton>
-      <TextButton type='filled'>Оформить заказ</TextButton>
-    </>
-  },
-  {
-    path: '/roomselector',
-    element: <RoomSelector/>,
-  },
-  {
-    path: '/roomform',
-    element: <RoomForm id={1}/>,
-  },
-  {
-    path: '/CeilingCalculator',
-    element: <CeilingCalculatorPage/>,
-  },
-], {
-  basename: 'https://mrmateriya.github.io/CeilingCalculator'
-})
+])
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
