@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/CeilingCalculator/static/css/main.c9f80cb0.css",
-    "main.js": "/CeilingCalculator/static/js/main.519b2295.js",
+    "main.js": "/CeilingCalculator/static/js/main.99e61e67.js",
     "static/js/453.7257c0c0.chunk.js": "/CeilingCalculator/static/js/453.7257c0c0.chunk.js",
     "static/media/ceilingBackGround.png": "/CeilingCalculator/static/media/ceilingBackGround.35050c4acf1a0fc2e7ac.png",
     "static/media/room.png": "/CeilingCalculator/static/media/room.04c443677069b2e38011.png",
@@ -9,11 +9,11 @@
     "static/media/FuturaPT-Book.ttf": "/CeilingCalculator/static/media/FuturaPT-Book.16ebcf48c36cedf12d82.ttf",
     "index.html": "/CeilingCalculator/index.html",
     "main.c9f80cb0.css.map": "/CeilingCalculator/static/css/main.c9f80cb0.css.map",
-    "main.519b2295.js.map": "/CeilingCalculator/static/js/main.519b2295.js.map",
+    "main.99e61e67.js.map": "/CeilingCalculator/static/js/main.99e61e67.js.map",
     "453.7257c0c0.chunk.js.map": "/CeilingCalculator/static/js/453.7257c0c0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c9f80cb0.css",
-    "static/js/main.519b2295.js"
+    "static/js/main.99e61e67.js"
   ]
 }

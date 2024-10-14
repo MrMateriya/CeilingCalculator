@@ -1,9 +1,22 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import styles from './styles/QuestionMark.module.css'
 import {handleTabSelection} from "../../utils/handleTabSelection";
 
 const QuestionMark = function QuestionMark({className, descriptionText, ...props}) {
     const [isShowDescription, setIsShowDescription] = useState(false)
+    const button = useRef(null)
+
+    useEffect(() => {
+        function clickOutHandle(e) {
+            const click = e.composedPath().includes(button.current)
+            if (!click) setIsShowDescription(false);
+        }
+        document.addEventListener('click', clickOutHandle)
+
+        return () => {
+            document.removeEventListener('click', clickOutHandle)
+        }
+    }, [])
 
     function handleKeyDown(e) {
         handleTabSelection(e, () => {
@@ -11,21 +24,16 @@ const QuestionMark = function QuestionMark({className, descriptionText, ...props
             setIsShowDescription(prev => !prev);
         })
     }
-    function handleDialogMouseLeave() {
-        setIsShowDescription(false);
-    }
-    function handlePointerMove() {
-        setIsShowDescription(true)
-    }
 
     return (
         <div
             className={[styles['question-mark'], className].join(' ')}
             {...props}
             tabIndex={0}
+            onClick={() => setIsShowDescription(prevState => !prevState)}
             onKeyDown={handleKeyDown}
-            onPointerMove={handlePointerMove}
-            onPointerLeave={handleDialogMouseLeave}
+            ref={button}
+            onBlur={() => setIsShowDescription(false)}
         >
             ?
             {
