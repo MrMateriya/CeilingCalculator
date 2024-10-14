@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {createBrowserRouter, Link, RouterProvider} from "react-router-dom";
 import { Provider } from "react-redux";
 import {mainStore} from "./store";
 import CeilingCalculatorPage from "./pages/CeilingCalculatorPage/components/CeilingCalculatorPage/CeilingCalculatorPage";
@@ -18,6 +18,10 @@ import TypesOfValue from "./components/CountedInput/constants/TypesOfValue";
 const router = createBrowserRouter([
   {
     path: '/',
+    element: <Link to="/CeilingCalculatorPage">To calculator page</Link>
+  },
+  {
+    path: '/CeilingCalculatorPage',
     element: <CeilingCalculatorPage/>
   },
   {
@@ -74,7 +78,7 @@ const router = createBrowserRouter([
     element: <CeilingCalculatorPage/>,
   },
 ], {
-  basename: '/CeilingCalculator'
+  basename: '/CeilingCalculator/'
 })
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
