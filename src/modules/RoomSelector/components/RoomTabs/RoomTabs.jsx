@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useRef} from 'react';
 import {memo} from "react";
 import styles from './styles/RoomTabs.module.css'
 import {handleTabSelection} from "../../../../utils/handleTabSelection";
