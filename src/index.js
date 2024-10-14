@@ -1,17 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import PlusButton from "./UI/PlusButton/PlusButton";
-import MinusButton from "./UI/MinusButton/MinusButton";
-import CountedInput from "./components/CountedInput/CountedInput";
-import TypesOfValue from "./components/CountedInput/constants/TypesOfValue";
-import SelectorInput from "./components/SelectorInput/SelectorInput";
-import TextButton from "./UI/TextButton/TextButton";
-import RoomSelector from "./modules/RoomSelector/components/RoomSelector/RoomSelector";
-import RoomForm from "./modules/RoomSelector/components/RoomForm/RoomForm";
 import { Provider } from "react-redux";
 import {mainStore} from "./store";
 import CeilingCalculatorPage from "./pages/CeilingCalculatorPage/components/CeilingCalculatorPage/CeilingCalculatorPage";

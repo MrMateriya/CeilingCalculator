@@ -3,32 +3,38 @@ import styles from './styles/QuestionMark.module.css'
 import {handleTabSelection} from "../../utils/handleTabSelection";
 
 const QuestionMark = function QuestionMark({className, descriptionText, ...props}) {
-  const [isShowDescription, setIsShowDescription] = useState(false)
+    const [isShowDescription, setIsShowDescription] = useState(false)
 
-  function handleShowDescription(e) {
-    setIsShowDescription(prevState => !prevState)
-  }
+    function handleKeyDown(e) {
+        handleTabSelection(e, () => {
+            e.preventDefault()
+            setIsShowDescription(prev => !prev);
+        })
+    }
+    function handleDialogMouseLeave() {
+        setIsShowDescription(false);
+    }
+    function handlePointerMove() {
+        setIsShowDescription(true)
+    }
 
-  return (
-    <div
-      className={[styles['question-mark'], className].join(' ')}
-      {...props}
-      tabIndex={0}
-      onKeyDown={(e) => {
-        handleTabSelection(e, handleShowDescription)
-      }}
-      onClick={handleShowDescription}
-    >
-      ?
-      {isShowDescription
-        ? descriptionText
-          ? <div onMouseLeave={(e) => {e.preventDefault(); setIsShowDescription(false);}} className={styles['question-mark__content']}>
-            {descriptionText}
-            </div>
-          : false
-        : false}
-    </div>
-  );
+    return (
+        <div
+            className={[styles['question-mark'], className].join(' ')}
+            {...props}
+            tabIndex={0}
+            onKeyDown={handleKeyDown}
+            onPointerMove={handlePointerMove}
+            onPointerLeave={handleDialogMouseLeave}
+        >
+            ?
+            {
+                isShowDescription && Boolean(descriptionText) ? <div className={styles['question-mark__content']}>
+                    {descriptionText}
+                </div> : null
+            }
+        </div>
+    );
 };
 
 export default QuestionMark;
